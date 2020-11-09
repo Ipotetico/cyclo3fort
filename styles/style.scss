@@ -1,0 +1,889 @@
+$blue_cyclo: #096cb2;
+$orange_cyclo: #ee7d00;
+$yellow_cyclo: #ffdd00;
+$green-cyclo: #00a75d;
+$grey_cyclo: #edf1f4;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  user-select: none;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: $grey_cyclo;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: 800;
+}
+
+.arrow {
+  z-index: 5;
+  position: absolute;
+  bottom: 0;
+  right: 0em;
+  width: 3em;
+  height: 3em;
+  background-image: url(../img/arrow.svg);
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  top: 0em;
+  right: 0em;
+  width: 2em;
+  height: 2em;
+  background-color: white;
+  border-radius: 50%;
+  border: 0.2em solid $orange_cyclo;
+  background-image: url(../img/cross.svg);
+  cursor: pointer;
+}
+
+nav {
+  z-index: 3;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 7%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+
+  .btn {
+    font-weight: 300;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+    padding: 0.2rem 1rem;
+    margin: 0 0.2rem;
+
+    &:nth-of-type(1) {
+      background-color: $orange_cyclo;
+    }
+
+    &:nth-of-type(2) {
+      background-color: navy;
+    }
+
+    &:nth-of-type(3) {
+      background-color: $blue_cyclo;
+    }
+
+    &:nth-of-type(4) {
+      background-color: dodgerblue;
+    }
+
+    &:nth-of-type(5) {
+      background-color: orange;
+    }
+
+    &:nth-of-type(6) {
+      background-color: orangered;
+    }
+
+    &:nth-of-type(7) {
+      background-color: orange;
+    }
+
+    &:nth-of-type(8) {
+      background-color: $orange_cyclo;
+    }
+  }
+
+  .cyclo {
+    border-bottom: 0.5em solid $orange_cyclo;
+  }
+
+  .dzial {
+    border-bottom: 0.5em solid navy;
+  }
+
+  .obrz {
+    border-bottom: 0.5em solid $blue_cyclo;
+  }
+
+  .objaw {
+    border-bottom: 0.5em solid dodgerblue;
+  }
+
+  .zyla {
+    border-bottom: 0.5em solid orange;
+  }
+
+  .hemo {
+    border-bottom: 0.5em solid orangered;
+  }
+
+  .lecz {
+    border-bottom: 0.5em solid orange;
+  }
+
+  .stos {
+    border-bottom: 0.5em solid $orange_cyclo;
+  }
+}
+
+.title {
+  max-width: 90%;
+  width: 90%;
+  height: 30%;
+  background-color: $blue_cyclo;
+  border-radius: 2rem;
+  left: 50%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    width: auto;
+    height: 60%;
+  }
+  h1 {
+    font-size: 2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    text-align: right;
+    color: white;
+  }
+  sup {
+    font-weight: 200;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+}
+
+.popup {
+  z-index: 15;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 85%;
+  height: 85%;
+  transition: 0.5s;
+  filter: drop-shadow(0 2em 2em rgba(black, 0.8));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.active {
+    z-index: 15;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.page {
+  position: absolute;
+  bottom: 16%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  width: 80%;
+  height: 80%;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+#page01 {
+  .image-background {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+  }
+  .first-line {
+    width: 100%;
+    height: 20%;
+    display: grid;
+    grid-template-columns: 10% 65% 25%;
+    grid-template-rows: 1fr;
+
+    img {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      justify-self: flex-start;
+      align-self: flex-start;
+    }
+  }
+  width: 90%;
+  .arrow {
+    z-index: 10;
+    right: 0em;
+  }
+  // background-image: url(../img/tlo_z_noga_i_logiem_2.png);
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+
+  .btn {
+    font-weight: 600;
+    color: $orange_cyclo;
+  }
+
+  .popup,
+  #tabelka {
+    width: 80%;
+    // background-image: url(../img/suplementy_nie@4x.png);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .triangle {
+    width: 6em;
+    height: 6em;
+    background-image: url(../img/trojkat_pomarancz.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    align-self: center;
+    justify-self: center;
+  }
+  #produkt {
+    position: absolute;
+    width: 30vw;
+    height: auto;
+    top: 55%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    filter: drop-shadow(0 0 1em rgba(black, 0.7));
+  }
+
+  #galeria01 {
+    background-image: url(../img/ruszczyk_foty.png);
+    height: 20em;
+    width: 100%;
+  }
+}
+
+.headlines {
+  position: absolute;
+  width: 50%;
+  left: 0;
+  bottom: 0;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transform: scale(1);
+  transition: 0.5s;
+
+  &.active {
+    left: 2em;
+    transform: scale(1.2);
+  }
+
+  h1 {
+    &:nth-of-type(1) {
+      color: $orange_cyclo;
+      text-shadow: 0 0.1em 0.2em rgba($color: black, $alpha: 0.6);
+      cursor: pointer;
+    }
+
+    &:nth-of-type(2) {
+      color: $blue_cyclo;
+    }
+
+    &:nth-of-type(3) {
+      color: $yellow_cyclo;
+    }
+  }
+}
+
+#page02 {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .arrow {
+    right: 3.5em;
+  }
+  .kulki {
+    position: absolute;
+    width: 90%;
+    height: 65%;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/zyla_2_kulki_ruchome_21-09.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.active {
+      background-image: url(../img/zyla_2_kulki_ruchome_21-09.gif);
+    }
+  }
+}
+
+#page03 {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .arrow {
+    right: 3.5em;
+  }
+  .grafika {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: auto;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+#page04 {
+  width: 100%;
+
+  .container {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    justify-content: center;
+
+    img {
+      height: 80%;
+      width: auto;
+    }
+  }
+
+  .arrow {
+    right: 3.5em;
+  }
+  .grafika {
+    position: absolute;
+    width: 90%;
+    height: auto;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .tabletki {
+    position: absolute;
+    z-index: 5;
+    max-width: 45%;
+    width: 45%;
+    height: 45%;
+    bottom: 0;
+    left: 10%;
+    cursor: pointer;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      transition: 0.5s;
+      width: 100%;
+      height: auto;
+    }
+
+    img:nth-of-type(1) {
+      opacity: 1;
+    }
+
+    img:nth-of-type(2) {
+      position: absolute;
+      opacity: 0;
+      transform: scale(1);
+    }
+
+    &.active {
+      img:nth-of-type(1) {
+        opacity: 0;
+      }
+
+      img:nth-of-type(2) {
+        opacity: 1;
+        transform: scale(1.3);
+      }
+    }
+  }
+}
+
+#page05 {
+  width: 100%;
+
+  .title {
+    max-width: 90%;
+    width: 90%;
+    height: 30%;
+    background-color: $blue_cyclo;
+    border-radius: 2rem;
+    left: 50%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      width: auto;
+      height: 60%;
+    }
+    h1 {
+      font-size: 2rem;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      text-align: right;
+      color: white;
+    }
+    sup {
+      font-weight: 200;
+      font-size: 1rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .foty {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    border: 0.3em solid $blue_cyclo;
+    border-radius: 1em;
+    transform: scale(1);
+    transition: 0.5s;
+    box-shadow: 0 0em 1em rgba($blue_cyclo, 0.8);
+    cursor: pointer;
+
+    &:nth-of-type(1) {
+      height: 95%;
+    }
+
+    &:nth-of-type(2) {
+      border: 0em solid $blue_cyclo;
+      position: absolute;
+      left: 96%;
+      transform: translateX(-100%);
+      box-shadow: 0 0em 1em rgba($blue_cyclo, 0);
+    }
+  }
+
+  .odnosnik {
+    position: absolute;
+    width: 30%;
+    height: auto;
+    bottom: 0;
+
+    &:nth-of-type(2) {
+      top: 45%;
+      right: 20%;
+    }
+  }
+
+  .arrow {
+    right: 3.5em;
+  }
+  .giry {
+    position: absolute;
+    background-image: url(../img/zylaki_2302_3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 35%;
+    height: 90%;
+    bottom: -50%;
+    left: 50%;
+    transform: scale(0) translate(-50%, -50%);
+    box-shadow: 0 0em 2em rgba($blue_cyclo, 0.8);
+    border-radius: 1em;
+    border: 0.2em solid $blue_cyclo;
+    transition: 0.5s;
+
+    &.active {
+      transform: scale(1) translate(-50%, -50%);
+    }
+  }
+
+  .cieplo {
+    position: absolute;
+    background-image: url(../img/cieplo_plus.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 37.4em;
+    height: 28em;
+    bottom: -40%;
+    left: 50%;
+    transform: scale(0) translate(-50%, -50%);
+    box-shadow: 0 0em 2em rgba($blue_cyclo, 0.8);
+    border-radius: 1.5em;
+    transition: 0.5s;
+
+    &.active {
+      transform: scale(1) translate(-50%, -50%);
+    }
+  }
+
+  .grafika {
+    position: absolute;
+    bottom: 0;
+    width: 85%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+#page06 {
+  width: 100%;
+
+  .title {
+    justify-content: center;
+
+    img {
+      height: 80%;
+      width: auto;
+    }
+  }
+
+  .arrow {
+    right: 3.5em;
+  }
+  .grafika {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 100%;
+    background-image: url(../img/graf_str_06.png);
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .hemoroidy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: scale(1) translate(-50%, -50%);
+    height: 20%;
+    width: 85%;
+    display: flex;
+    transition: 0.5s;
+    opacity: 1;
+    cursor: pointer;
+
+    .asses {
+      width: 90%;
+      height: auto;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: scale(1);
+      transition: 0.5s;
+    }
+
+    .close {
+      right: 0;
+      visibility: hidden;
+    }
+
+    img {
+      margin: -2em;
+      transform: scale(0.8);
+      transition: 0.5s;
+    }
+
+    &.show {
+      margin: 0em;
+      width: 90%;
+      top: 65%;
+      left: 50%;
+
+      .asses {
+        transform: scale(1.1);
+      }
+
+      .close {
+        right: -0.5em;
+        top: -3.5em;
+        visibility: visible;
+      }
+    }
+
+    &.hide {
+      opacity: 0;
+    }
+  }
+
+  .close {
+    visibility: hidden;
+  }
+
+  .belka {
+    position: absolute;
+    top: 85%;
+    height: 30%;
+    width: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+    opacity: 1;
+    cursor: pointer;
+
+    &.show {
+      width: 95%;
+      height: 12em;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .close {
+        right: 1em;
+        top: 1em;
+        visibility: visible;
+      }
+    }
+
+    &.hide {
+      opacity: 0;
+    }
+  }
+}
+
+#page07 {
+  width: 100%;
+
+  .container {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    justify-content: center;
+
+    img {
+      height: 80%;
+      width: auto;
+    }
+  }
+
+  .arrow {
+    right: 3.5em;
+  }
+  .grafika {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: auto;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .tabletki {
+    position: absolute;
+    z-index: 5;
+    max-width: 45%;
+    width: 45%;
+    height: 45%;
+    bottom: 0;
+    left: 10%;
+    cursor: pointer;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      transition: 0.5s;
+      width: 100%;
+      height: auto;
+    }
+
+    img:nth-of-type(1) {
+      opacity: 1;
+    }
+
+    img:nth-of-type(2) {
+      position: absolute;
+      opacity: 0;
+      transform: scale(1);
+    }
+
+    &.active {
+      img:nth-of-type(1) {
+        opacity: 0;
+      }
+
+      img:nth-of-type(2) {
+        opacity: 1;
+        transform: scale(1.3);
+      }
+    }
+  }
+}
+
+#page08 {
+  width: 100%;
+
+  .title {
+    justify-content: center;
+
+    img {
+      height: 80%;
+      width: auto;
+    }
+  }
+
+  .arrow {
+    right: 3.5em;
+  }
+  .grafika {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 90%;
+    width: 90%;
+    height: 100%;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    img:nth-of-type(1) {
+      position: relative;
+
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      top: 70%;
+      left: 60%;
+      transform: translate(-50%, -50%);
+    }
+
+    .paczka {
+      position: absolute;
+      background-image: url(../img/paczka_cyclo.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 32%;
+      height: auto;
+      right: 0;
+      bottom: 0;
+      filter: drop-shadow(0 0 2em $blue_cyclo);
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    .sil {
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      transform: scale(0) translate(-50%, -50%);
+      max-width: 100%;
+      width: 90%;
+      height: 24em;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: drop-shadow(0 0 2em $blue_cyclo);
+      transition: 0.5s;
+
+      &.active {
+        transform: scale(1) translate(-50%, -50%);
+      }
+    }
+
+    .close {
+      top: 30%;
+      right: 5%;
+      opacity: 0;
+      transition: 0.5s;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+#overlay {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(black, 0.7);
+  opacity: 0;
+  transition: 0.5s;
+
+  &.active {
+    z-index: 5;
+    opacity: 1;
+  }
+}
